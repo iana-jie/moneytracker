@@ -1,0 +1,249 @@
+I cannot directly access external websites or specific URLs to retrieve their full HTML content. My capabilities are limited to the information provided in our conversation and the context I was trained on.
+
+However, I can provide you with the full HTML content that was previously provided in the context of this conversation. This HTML code represents the "MoneyTrack - ABM Students' Allowance Manager" website with the category management system and other features.
+
+Here is the full HTML content from the provided context:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoneyTrack - ABM Students' Allowance Manager</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="login-section" style="background-color: #F5F5DC; border: 1px solid #36454F; border-radius: 8px; padding: 20px; max-width: 400px; margin: 20px auto;">
+        <h3>Secure Student Login</h3>
+        <form id="login-form">
+            <input type="email" placeholder="Student ID/Email" id="login-email" required>
+            <input type="password" placeholder="Password" id="login-password" required>
+            <button id="login-btn" class="primary-btn" style="background-color: #2C5E1A; color: #D4AF37; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer; font-weight: 500;">Login</button>
+        </form>
+        <div id="login-message"></div>
+    </div>
+    <header style="background-color: #2C5E1A; color: #D4AF37; box-shadow: 0 2px 10px rgba(0,0,0,0.2);">
+        <h1 style="margin: 0; padding: 10px 0; font-size: 2.2rem;">MoneyTrack</h1>
+        <p>Created by Dreamscapers - ABM Student Developers</p>
+        <div class="feature-checklist">
+            <h3>Key Features:</h3>
+            <ul>
+                <li>✅ Daily Allowance Tracker</li>
+                <li>✅ Expense Categorization (Food, Transport, School, Wants, Savings)</li>
+                <li>✅ Weekly & Monthly Budget Goals</li>
+                <li>✅ Savings Challenge Tracker (e.g., "₱20 ipon challenge")</li>
+                <li>✅ Progress Graphs/Charts</li>
+                <li>✅ Reminder Alerts</li>
+                <li>✅ Financial Tips</li>
+                <li>✅ Downloadable Reports (PDF/Excel)</li>
+                <li>✅ Secure Login</li>
+            </ul>
+        </div>
+        <style>
+            .modal {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0,0,0,0.5);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 1000;
+            }
+            .category-btn {
+                background: #D4AF37;
+                color: #2C5E1A;
+                border: none;
+                padding: 5px 10px;
+                border-radius: 4px;
+                margin-left: 10px;
+                cursor: pointer;
+            }
+            .expense-category-tag {
+                display: inline-block;
+                padding: 2px 8px;
+                border-radius: 12px;
+                font-size: 0.8rem;
+                margin-left: 8px;
+                color: white;
+            }
+            .feature-checklist {
+                background: rgba(69, 77, 85, 0.8);
+                padding: 10px;
+                border-radius: 8px;
+                margin: 15px 0;
+            }
+            .feature-checklist ul {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+                padding-left: 20px;
+                list-style-type: none;
+            }
+            .feature-checklist li {
+                font-size: 0.85rem;
+            }
+        </style>
+        <nav class="main-navigation">
+            <a href="tracker.html" class="nav-link">Allowance Tracker</a>
+            <a href="expenses.html" class="nav-link">Expenses</a>
+            <a href="goals.html" class="nav-link">Savings Goals</a>
+        </nav>
+    </header>
+    <main>
+        <section class="dashboard-summary" style="background: #F5F5DC; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+            <h2>Dashboard Summary</h2>
+            <div>
+                <p><strong>Current Balance:</strong> <span id="current-balance">₱0.00</span></p>
+                <p><strong>This Week's Total Expenses:</strong> <span id="weekly-expenses">₱0.00</span></p>
+                <p><strong>Top 3 Spending Categories:</strong></p>
+                <ul id="top-categories">
+                    <li>Food: ₱0.00</li>
+                    <li>Transport: ₱0.00</li>
+                    <li>School: ₱0.00</li>
+                </ul>
+                <div>
+                    <strong>Savings Progress:</strong>
+                    <div style="width: 100%; height: 20px; background: #36454F; border-radius: 10px; overflow: hidden;">
+                        <div id="savings-progress-bar" style="height: 100%; width: 0%; background: #D4AF37;"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="page-content">
+            <div class="input-section">
+                <h2>Weekly Allowance Tracker</h2>
+                <small>Custom built for ABM student needs</small>
+                <input type="number" placeholder="Enter your weekly allowance" id="allowance" class="styled-input">
+                <button id="save-allowance" class="primary-btn">Save</button>
+                <button id="reset-weekly" class="secondary-btn">Reset Weekly</button>
+            </div>
+            
+            <div class="weekly-summary">
+                <h3>Weekly/Monthly Summary</h3>
+                <div class="time-period-toggle">
+                    <button class="period-btn active" data-period="weekly">Weekly</button>
+                    <button class="period-btn" data-period="monthly">Monthly</button>
+                </div>
+                <div class="weekly-balance">
+                    <p>Remaining this week: <strong id="weekly-remaining">₱0.00</strong></p>
+                    <p>Total spent: <strong id="weekly-spent">₱0.00</strong></p>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="expenses">
+                <h2>Expense Manager</h2>
+                <button id="manage-categories" class="category-btn">Manage Categories</button>
+                <div class="expense-form" style="background: #F5F5DC; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.2); margin: 20px 0;">
+                    <input type="text" placeholder="Item/Purpose" id="expense-name" required>
+                    <input type="number" placeholder="Daily Budget Tip: ₱100-₱150" id="expense-amount" min="0" step="1" required>
+                    <select id="expense-category">
+                        <option value="food" data-color="#FF9800">🍔 Food</option>
+                        <option value="transport" data-color="#2196F3">🚌 Transport</option>
+                        <option value="school" data-color="#4CAF50">📚 School Supplies</option>
+                        <option value="personal" data-color="#9C27B0">🧴 Personal Care</option>
+                        <option value="other" data-color="#607D8B">💸 Other</option>
+                        <option value="custom" class="add-new">➕ Add New Category</option>
+                    </select>
+                    <button id="add-expense">Add Expense</button>
+                </div>
+                <div id="expense-list" style="background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <!-- Each expense item will have a colored indicator based on its category -->
+                </div>
+                <div class="report-actions">
+                    <button id="export-pdf" class="report-btn">Export PDF</button>
+                    <button id="export-excel" class="report-btn">Export Excel</button>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="goals">
+                <h2>Savings Goals & Challenges</h2>
+                <div class="challenge-section">
+                    <h3>Savings Challenges</h3>
+                    <button class="challenge-btn" data-amount="20">₱20 Daily Challenge</button>
+                    <button class="challenge-btn" data-amount="50">₱50 Weekly Challenge</button>
+                </div>
+                <input type="number" placeholder="Target amount" id="goal-amount">
+                <button id="set-goal">Set Goal</button>
+                <div id="goal-progress" style="background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin-top: 15px;">
+                    <div style="width: 100%; height: 20px; background: #f0f0f0; border-radius: 10px; overflow: hidden;">
+                        <div id="progress-bar" style="height: 100%; width: 0%; background: #4CAF50;"></div>
+                    </div>
+                    <p id="progress-text" style="margin-top: 8px; text-align: center; color: #666; font-size: 0.9rem;"></p>
+                </div>
+            </div>
+        </section>
+        <section class="analytics-section" style="background: #F5F5DC; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+            <h2>Analytics</h2>
+            <canvas id="expenses-pie-chart"></canvas>
+            <canvas id="savings-line-graph"></canvas>
+            <canvas id="comparison-bar-chart"></canvas>
+        </section>
+        <section class="financial-tips-widget" style="background: #F5F5DC; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+            <h2>Financial Tips</h2>
+            <div class="tips-carousel">
+                <div class="tip-card">Tip: Save 10% of your allowance!</div>
+                <div class="tip-card">Quote: "A penny saved is a penny earned."</div>
+                <div class="tip-card">Read: <a href="#">Understanding Budgeting</a></div>
+            </div>
+        </section>
+        <section class="achievements-section" style="background: #F5F5DC; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+            <h2>Achievements</h2>
+            <ul>
+                <li>🔓 Logged expenses 7 days in a row</li>
+                <li>💰 Saved ₱500</li>
+                <li>🎯 Completed 1-month savings challenge</li>
+            </ul>
+        </section>
+        <section class="budget-planner" style="background: #F5F5DC; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+            <h2>Budget Planner</h2>
+            <div>
+                <label for="food-budget">Food Budget:</label>
+                <input type="number" id="food-budget" placeholder="₱500" />
+                <label for="transport-budget">Transport Budget:</label>
+                <input type="number" id="transport-budget" placeholder="₱200" />
+                <button id="set-budget" class="primary-btn">Set Budget</button>
+            </div>
+        </section>
+    </main>
+    <footer style="background-color: #2C5E1A; color: #F5F5DC; padding: 20px; text-align: center;">
+        <p>© 2025 MoneyTrack | Dreamscapers ABM Project</p>
+        <p>A student-built budgeting tool</p>
+    </footer>
+    <script>
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.tab-content').forEach(content => {
+                    content.classList.remove('active');
+                });
+                document.querySelectorAll('.tab-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                
+                const tabId = btn.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('active');
+                btn.classList.add('active');
+            });
+        });
+    <div id="category-modal" class="modal" style="display:none;">
+        <div class="modal-content" style="background: #F5F5DC; padding: 20px; border-radius: 8px;">
+            <h3>Manage Expense Categories</h3>
+            <div id="current-categories">
+                <!-- Existing categories will be listed here -->
+            </div>
+            <div class="add-category">
+                <input type="text" id="new-category" placeholder="New category name">
+                <input type="color" id="cat-color" value="#6e8efb">
+                <button id="add-category" class="primary-btn">Add</button>
+            </div>
+            <button id="close-modal" class="secondary-btn">Close</button>
+        </div>
+    </div>
+    </script>
+</body>
+</html>
+```
